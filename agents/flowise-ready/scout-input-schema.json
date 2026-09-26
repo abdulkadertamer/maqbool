@@ -1,0 +1,14 @@
+[
+  {
+    "property": "keyword",
+    "type": "string",
+    "description": "Job title or skill to search for, e.g. AI intern",
+    "required": true
+  },
+  {
+    "property": "limit",
+    "type": "number",
+    "description": "How many results to return, default 10",
+    "required": false
+  }
+]
