@@ -5,3 +5,6 @@ dist/
 build/
 .DS_Store
 *.log
+
+# Personal planning docs — kept locally, not part of the public repo
+docs/
