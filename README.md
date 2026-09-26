@@ -125,16 +125,16 @@ support.
 
 ```
 agents/              system prompts, one file per agent
-  flowise-ready/     brace-escaped versions + custom tool code
+  tools/             tool configs (HTTP + Postgres) for the Scout and Tracker
+  flowise-ready/      brace-escaped prompts + custom tool code, ready to paste
 db/
-  schema.sql         7 tables, 1 view, indexes
-  seed.sql           sample pipeline data
+  schema.sql          7 tables, 1 view, indexes
+  seed.sql            sample pipeline data
 server/
-  src/lib/           db pool, agent proxy, health check
-  src/routes/        profile · jobs · applications · chat · stats
+  src/lib/            db pool, agent proxy, health check
+  src/routes/         profile · jobs · applications · chat · stats
 web/
-  src/App.jsx        dashboard, activity timeline, chat
-docs/
+  src/App.jsx         dashboard, activity timeline, chat
 ```
 
 ---
@@ -144,6 +144,12 @@ docs/
 - Coach Agent — multi-turn mock interviews scored against the JD
 - Email ingestion, so status changes are detected instead of typed
 - Deploy the backend so the agents don't need a tunnel
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
 
 ---
 

@@ -3,8 +3,20 @@ import 'dotenv/config';
 
 const { Pool } = pg;
 
+// Neon's connection string carries its own sslmode/channel_binding query
+// params, which collide with an explicit `ssl` option and print a noisy
+// deprecation warning on every boot. Strip them and let the ssl object below
+// be the single source of truth.
+function cleanConnectionString(raw) {
+  if (!raw) return raw;
+  const url = new URL(raw);
+  url.searchParams.delete('sslmode');
+  url.searchParams.delete('channel_binding');
+  return url.toString();
+}
+
 export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: cleanConnectionString(process.env.DATABASE_URL),
   ssl: { rejectUnauthorized: false },
   max: 5,
   idleTimeoutMillis: 30000,

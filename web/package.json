@@ -1,8 +1,10 @@
 {
   "name": "maqbool-web",
-  "private": true,
   "version": "1.0.0",
+  "description": "Maqbool dashboard — pipeline board, agent activity timeline, and chat.",
+  "private": true,
   "type": "module",
+  "engines": { "node": ">=18" },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

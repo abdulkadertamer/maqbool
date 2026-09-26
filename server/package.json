@@ -1,7 +1,9 @@
 {
   "name": "maqbool-server",
   "version": "1.0.0",
+  "description": "Express API for Maqbool — the only path between the agents and Postgres.",
   "type": "module",
+  "engines": { "node": ">=18" },
   "scripts": {
     "dev": "node --watch src/index.js",
     "start": "node src/index.js",
